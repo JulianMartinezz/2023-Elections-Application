@@ -17,7 +17,9 @@ The application provides several functionalities:
 The application can be run using Docker Compose, which allows you to run multiple Docker containers simultaneously. In this case, two Docker images are used: one for the server and one for the client application.
 
 Here’s a basic example of a `docker-compose.yml` file that can be used to run the application:
+In this example, the server service uses the `tupfrcutn/elecciones-2023:1.0.0` image and exposes port 8080. The client service is built from the `Dockerfile` in the current directory and exposes port 8081.
 
+To run the application, navigate to the directory containing the `docker-compose.yml` file and use the following command:
 ```yaml
 version: '3'
 services:
@@ -29,9 +31,7 @@ services:
     build: .
     ports:
       - "8081:8081"
-In this example, the server service uses the `tupfrcutn/elecciones-2023:1.0.0` image and exposes port 8080. The client service is built from the `Dockerfile` in the current directory and exposes port 8081.
 
-To run the application, navigate to the directory containing the `docker-compose.yml` file and use the following command:
 
 ```bash
 docker-compose up
